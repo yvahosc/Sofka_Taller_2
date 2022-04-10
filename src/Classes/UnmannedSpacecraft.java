@@ -2,10 +2,10 @@ package Classes;
 
 import Interfaces.ISpacecraft;
 
-public class unmannedSpacecraft extends Spacecraft implements ISpacecraft {
+public class UnmannedSpacecraft extends Spacecraft implements ISpacecraft {
     private float push;
 
-    public unmannedSpacecraft(
+    public UnmannedSpacecraft(
             String name,
             String originCountry,
             float weight,
