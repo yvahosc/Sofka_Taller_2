@@ -4,17 +4,19 @@ import Interfaces.ISpacecraft;
 
 public class MannedSpacecraft extends Spacecraft implements ISpacecraft {
     public int capacity;
+    public LauncherSpacecraft launcherSpacecraft;
 
-    public MannedSpacecraft(
-            String name,
-            String originCountry,
-            float weight,
-            int yearOfCreation,
-            String fuelType,
-            int capacity)
+    public MannedSpacecraft(String name,
+                            String originCountry,
+                            float weight,
+                            int yearOfCreation,
+                            String fuelType,
+                            int capacity,
+                            LauncherSpacecraft launcherSpacecraft)
     {
         super(name, originCountry, weight, yearOfCreation, fuelType);
         this.capacity = capacity;
+        this.launcherSpacecraft = launcherSpacecraft;
     }
 
     public int getCapacity() {
@@ -23,6 +25,14 @@ public class MannedSpacecraft extends Spacecraft implements ISpacecraft {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public LauncherSpacecraft getLauncherSpacecraft() {
+        return launcherSpacecraft;
+    }
+
+    public void setLauncherSpacecraft(LauncherSpacecraft launcherSpacecraft) {
+        this.launcherSpacecraft = launcherSpacecraft;
     }
 
     @Override
@@ -52,7 +62,7 @@ public class MannedSpacecraft extends Spacecraft implements ISpacecraft {
     }
 
     @Override
-    public void turnOnSpaceCraft() {
+    public void turnOnSpacecraft() {
         if (super.isFilledUpTank() == false){
             System.out.println("Es necesario poner combustible a la nave " +
                     "tripulada antes de encenderla.");

@@ -4,6 +4,7 @@ import Interfaces.ISpacecraft;
 
 public class UnmannedSpacecraft extends Spacecraft implements ISpacecraft {
     private float push;
+    public LauncherSpacecraft launcherSpacecraft;
 
     public UnmannedSpacecraft(
             String name,
@@ -11,10 +12,12 @@ public class UnmannedSpacecraft extends Spacecraft implements ISpacecraft {
             float weight,
             int yearOfCreation,
             String fuelType,
-            float push)
+            float push,
+            LauncherSpacecraft launcherSpacecraft)
     {
         super(name, originCountry, weight, yearOfCreation, fuelType);
         this.push = push;
+        this.launcherSpacecraft = launcherSpacecraft;
     }
 
     public float getPush() {
@@ -23,6 +26,14 @@ public class UnmannedSpacecraft extends Spacecraft implements ISpacecraft {
 
     public void setPush(float push) {
         this.push = push;
+    }
+
+    public LauncherSpacecraft getLauncherSpacecraft() {
+        return launcherSpacecraft;
+    }
+
+    public void setLauncherSpacecraft(LauncherSpacecraft launcherSpacecraft) {
+        this.launcherSpacecraft = launcherSpacecraft;
     }
 
     @Override
@@ -45,7 +56,7 @@ public class UnmannedSpacecraft extends Spacecraft implements ISpacecraft {
     }
 
     @Override
-    public void turnOnSpaceCraft() {
+    public void turnOnSpacecraft() {
         if (super.isFilledUpTank() == false){
             System.out.println("Es necesario poner combustible a la nave no " +
                     "tripulada antes de encenderla.");

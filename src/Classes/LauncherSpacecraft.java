@@ -4,8 +4,8 @@ import Interfaces.ISpacecraft;
 
 public class LauncherSpacecraft extends Spacecraft implements ISpacecraft {
 
-    public int capacityTransport;
-    public int push;
+    private int capacityTransport;
+    private int push;
 
     public LauncherSpacecraft(
             String name,
@@ -58,13 +58,46 @@ public class LauncherSpacecraft extends Spacecraft implements ISpacecraft {
     }
 
     @Override
-    public void turnOnSpaceCraft() {
+    public void turnOnSpacecraft() {
         if (super.isFilledUpTank() == false){
             System.out.println("Es necesario poner combustible a la nave " +
                     "lanzadora antes de encenderla.");
         } else{
             super.setSpacecraftTurnedOn(true);
             System.out.println("Nave lanzadora encendida.");
+        }
+    }
+
+    public boolean startSpaceShip(boolean boardSpaceShip)
+            throws InterruptedException
+    {
+
+        if (super.isFilledUpTank() == true){
+
+            if (boardSpaceShip == true){
+
+                if (super.isSpacecraftTurnedOn() == true){
+
+                    System.out.println("Lanzamiento iniciado...");
+                    for (int i = 0;i < 11; i++){
+                        Thread.sleep(1000);
+                        System.out.println((10 - i) + " segundos...");
+                    }
+                    System.out.println("Lanzamiento exitoso." + "\n");
+                    return true;
+                } else{
+                    System.out.println("Es necesario encender las naves " +
+                            "primero.");
+                    return false;
+                }
+            } else{
+                System.out.println("Es necesario abordar la nave primero.");
+                return false;
+            }
+        } else {
+            System.out.println("Es necesario poner combustible a las naves " +
+                    "primero.");
+            return false;
         }
     }
 }
