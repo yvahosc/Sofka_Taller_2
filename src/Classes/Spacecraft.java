@@ -81,5 +81,5 @@ public abstract class Spacecraft {
 
     public abstract void function();
 
-    public abstract void boardSpacecraft();
+    public abstract void boardSpacecraft() throws InterruptedException;
 }
