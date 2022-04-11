@@ -7,7 +7,22 @@ import Classes.UnmannedSpacecraft;
 
 import java.util.Scanner;
 
+/**
+ * Representa la clase principal del código en la que se instancian dos naves
+ * espaciales lanzadoras, dos naves espaciales no tripuladas y dos naves
+ * espaciales tripuladas, se crea un programa en el que de manera interactiva
+ * el usuario crea y lanza misiones al espacio, definiendo las naves a utilizar
+ * y realizando los procedimientos de cargue de combustible, encendido,
+ * abordaje y lanzamiento de las naves al espacio.
+ * @author Yeisson Vahos Cortes
+ */
 public class Main {
+
+    /**
+     * Representa la clase principal del código, instancia y simula el
+     * lanzamiento de misiones al espacio.
+     * @param args the command line arguments
+     */
     public static void main(String[] args) throws InterruptedException {
         String input;
         int choice;
@@ -103,6 +118,14 @@ public class Main {
 
     }
 
+    /**
+     * Método que imprime en consola cierta información de las naves que se
+     * utilizan en las misiones creadas por el usuario.
+     * @param launcher Representa la nave espacial lanzadora que utiliza la
+     *                 nave espacial para hacer el despegue.
+     * @param spacecraft Representa la nave espacial que se utiliza para la
+     *                   misión creada por el usuario.
+     */
     public static void printing(LauncherSpacecraft launcher,
                                 Spacecraft spacecraft)
     {
@@ -123,6 +146,17 @@ public class Main {
                 "de enviar la misión al espacio...");
     }
 
+    /**
+     * Método que valida si la nave lanzadora elegida por el usuario está en
+     * capacidad de lanzar la nave espacial no tripulada elegida por el
+     * usuario y que será utilizada para la misión creada por el usuario.
+     * @param launcher Representa la nave espacial lanzadora que utiliza la
+     *                 nave espacial no tripulada para hacer el despegue.
+     * @param spacecraft Representa la nave espacial no tripulada que se
+     *                   utiliza para la misión creada por el usuario.
+     * @throws InterruptedException Control de posible excepción por el uso
+     * del método thread.sleep
+     */
     public static void validationOfCapacityLaunchUnmannedSpacecraft(
             LauncherSpacecraft launcher,
             UnmannedSpacecraft spacecraft)
@@ -142,6 +176,18 @@ public class Main {
                     "su capacidad de transporte.");
         }
     }
+
+    /**
+     * Método que valida si la nave lanzadora elegida por el usuario está en
+     * capacidad de lanzar la nave espacial tripulada elegida por el usuario
+     * y que será utilizada para la misión creada por el usuario.
+     * @param launcher Representa la nave espacial lanzadora que utiliza la
+     *                 nave espacial tripulada para hacer el despegue.
+     * @param spacecraft Representa la nave espacial tripulada que se utiliza
+     *                   para la misión creada por el usuario.
+     * @throws InterruptedException Control de posible excepción por el uso
+     * del método thread.sleep
+     */
     public static void validationOfCapacityLaunchMannedSpacecraft(
             LauncherSpacecraft launcher,
             MannedSpacecraft spacecraft)
@@ -162,6 +208,13 @@ public class Main {
         }
     }
 
+    /**
+     * Método que a partir de la información proporcionada por el usuario
+     * crea un objeto de la clase nave espacial lanzadora que se va a
+     * utilizar en la misión al espacio.
+     * @return un objeto de la clase nave espacial lanzadora con toda su
+     * información.
+     */
     public static LauncherSpacecraft launcher(){
 
         String input;
@@ -197,6 +250,21 @@ public class Main {
         return null;
     }
 
+    /**
+     * Método que realiza el proceso de lanzamiento de la misión al espacio,
+     * verificando que antes se haga el cargue de combustible y se encienda
+     * la nave espacial.
+     * @param boardSpacecraft Verifica que estado del proceso de abordar la
+     *                        nave de la misión.
+     * @param spacecraft Objeto de la clase nave espacial no tripulada que
+     *                   almacena la información de la nave utilizada para la
+     *                   misión.
+     * @param launcher Objeto de la clase nave espacial lanzadora que
+     *                 almacena la información de la nave de tipo lanzadora
+     *                 utilizada para la misión.
+     * @throws InterruptedException Control de posible excepción por el uso
+     * del método thread.sleep
+     */
     public static void startUnmannedSpacecraft (
             boolean boardSpacecraft,
             UnmannedSpacecraft spacecraft,
@@ -238,6 +306,21 @@ public class Main {
         while (choice == 1);
     }
 
+    /**
+     * Método que realiza el proceso de lanzamiento de la misión al espacio,
+     * verificando que antes se haga el cargue de combustible, se encienda y
+     * se aborde la nave espacial.
+     * @param boardSpacecraft Verifica que estado del proceso de abordar la
+     *                        nave de la misión.
+     * @param spacecraft Objeto de la clase nave espacial tripulada que
+     *                   almacena la información de la nave utilizada para la
+     *                   misión.
+     * @param launcher Objeto de la clase nave espacial lanzadora que
+     *                 almacena la información de la nave de tipo lanzadora
+     *                 utilizada para la misión.
+     * @throws InterruptedException Control de posible excepción por el uso
+     * del método thread.sleep
+     */
     public static void startMannedSpacecraft (
             boolean boardSpacecraft,
             MannedSpacecraft spacecraft,
@@ -285,6 +368,16 @@ public class Main {
         while (choice == 1);
     }
 
+    /**
+     * Método que recibe un string (ingresado por el usuario) y evalua si
+     * este puede ser convertido a entero y si no es posible captura la
+     * excepción.
+     * @param input Valor que se recibe por consola por parte del usuario
+     *              para la construcción y lanzamiento de misiones al espacio.
+     * @return Un número entero el cual puede manejarse dentro del método
+     * principal para la interacción con el usuario en la construcción y
+     * lanzamiento de misiones al espacio.
+     */
     public static int consoleInputVerification (String input){
         try{
             int choice;
