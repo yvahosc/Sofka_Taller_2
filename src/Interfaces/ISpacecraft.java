@@ -13,7 +13,7 @@ public interface ISpacecraft {
     public void refuelingSpacecraft();
 
     /**
-     * Representa la declaración del método para encender las naves espaciales. 
+     * Representa la declaración del método para encender las naves espaciales.
      */
     public void turnOnSpacecraft();
 
