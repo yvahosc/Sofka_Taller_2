@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="66ec9124-9faa-484e-8651-cfdc2db9ab38" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/MannedSpacecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/MannedSpacecraft.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/Spacecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Spacecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/UnmannedSpacecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/UnmannedSpacecraft.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1649538216327</updated>
       <workItem from="1649538220296" duration="5584000" />
-      <workItem from="1649614826039" duration="15479000" />
+      <workItem from="1649614826039" duration="16436000" />
     </task>
     <servers />
   </component>
