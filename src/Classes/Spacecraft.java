@@ -133,7 +133,7 @@ public abstract class Spacecraft {
      * espacial.
      * @param yearOfCreation El valor que se quiere asignar al atributo
      *                       correspondiente al año de creación de la nave
-     *                       espacial. 
+     *                       espacial.
      */
     public void setYearOfCreation(int yearOfCreation) {
         this.yearOfCreation = yearOfCreation;

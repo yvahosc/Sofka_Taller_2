@@ -132,7 +132,7 @@ public class MannedSpacecraft extends Spacecraft implements ISpacecraft {
 
     /**
      * Representa la implementación del método abstracto para encender la
-     * nave espacial. 
+     * nave espacial.
      */
     @Override
     public void turnOnSpacecraft() {

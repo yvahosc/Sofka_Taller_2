@@ -144,7 +144,7 @@ public class LauncherSpacecraft extends Spacecraft implements ISpacecraft {
      * estado de la nave (el cargue del combustible, abordaje y encendido de
      * la nave).
      * @throws InterruptedException Control de posible excepción por el uso
-     * del método thread.sleep 
+     * del método thread.sleep
      */
     public boolean startSpaceShip(boolean boardSpaceShip)
             throws InterruptedException
